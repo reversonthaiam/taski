@@ -1,0 +1,12 @@
+body {
+  margin: 42px;
+}
+
+h1 {
+  font-family: 'Arial Black', Gadget, sans-serif;
+}
+
+p {
+  font-family: 'Lucida Sans Unicode', 'Lucida Sans Regular', 'Lucida Grande',
+    Geneva, Verdana, sans-serif;
+}
