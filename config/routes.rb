@@ -1,18 +1,15 @@
 Rails.application.routes.draw do
-  get 'tasks/show'
-  get 'tasks/new'
-  get 'tasks/edit'
-  
+
+  devise_for :users
   get "contact", to: "pages#contact"
   get "about", to: "pages#about"
-  get "error", to: "pages#error"
 
-  get "blog", to: redirect('https://www.google.com.br')
+  get "blog", to: redirect("https://ismaeljarias.com")
 
-  resources :projects
+  resources :projects do
+    resources :tasks, except: [:index], controller: 'projects/tasks'
+  end
 
   root 'pages#home'
-
-  get "*path", to: redirect("/error")
-
+  
 end
