@@ -4,7 +4,7 @@ Project developed in the [Ruby on Rails Foundations course](https://www.udemy.co
 
 ## Ruby version
 
-3.1.1
+3.1.2
 
 ## Installing dependencies
 
