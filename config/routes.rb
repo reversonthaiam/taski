@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   devise_for :users
+
   get "contact", to: "pages#contact"
   get "about", to: "pages#about"
 
-  get "blog", to: redirect("https://ismaeljarias.com")
+  get "blog", to: redirect("https://www.google.com")
 
   resources :projects do
     resources :tasks, except: [:index], controller: 'projects/tasks'

@@ -1,9 +1,9 @@
-class CreateTasks < ActiveRecord::Migration[7.0]
+class CreateTasks < ActiveRecord::Migration[5.2]
   def change
     create_table :tasks do |t|
       t.string :title
       t.text :description
-      t.references :project, null: false, foreign_key: true
+      t.references :project, foreign_key: true
 
       t.timestamps
     end

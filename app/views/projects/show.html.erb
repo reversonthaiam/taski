@@ -1,10 +1,29 @@
-<p style="color: green"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-<%= render @project %>
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
 
-<div>
-  <%= link_to "Edit this project", edit_project_path(@project) %> |
-  <%= link_to "Back to projects", projects_path %>
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
 
-  <%= button_to "Destroy this project", @project, method: :delete %>
-</div>
+<p>
+  <strong>Percent complete:</strong>
+  <%= @project.percent_complete %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+
+<hr />
+
+<h2>Task for project</h2>
+
+<% @tasks.each do |task| %>
+  <p><%= link_to task.title, project_task_path(@project.id, task.id) %></p>
+<% end %>
+
+<%= link_to "Add new Task for this project", new_project_task_path(project_id: @project.id) %>
